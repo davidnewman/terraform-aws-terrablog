@@ -20,10 +20,10 @@ data "aws_iam_policy_document" "bucket_policy" {
 
 # This creates the s3 bucket and configures it in a way to host
 # a static website.
-resource "aws_s3_bucket" "website" {
-  bucket = "${var.site_bucket_name}"
+resource "aws_s3_bucket_website_configuration" "website" {
+  bucket = var.site_bucket_name
   acl    = "public-read"
-  policy = "${data.aws_iam_policy_document.bucket_policy.json}"
+  policy = data.aws_iam_policy_document.bucket_policy.json
 
   website {
     index_document = "index.html"
