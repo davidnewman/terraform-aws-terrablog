@@ -1,17 +1,17 @@
 variable "site_bucket_name" {
-  type        = "string"
+  type        = string
   description = "Name of the S3 bucket that storest the site's content."
   default     = "mysite"
 }
 
 variable "domain_name" {
-  type        = "string"
+  type        = string
   description = "Valid DNS name of the site."
   default     = "mysite.com"
 }
 
 variable "cdn_price_class" {
-  type        = "string"
+  type        = string
   description = "Price goes up based on which edge locations are in use."
   default     = "PriceClass_100"
 }
